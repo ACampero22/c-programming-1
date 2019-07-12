@@ -35,6 +35,7 @@ char value_letter(card_t c) {
     case VALUE_QUEEN:{x='Q'; break;}
     case VALUE_KING: {x='K'; break;}
     case VALUE_ACE:  {x='A'; break;}
+    default: break;
     }
   }
 
