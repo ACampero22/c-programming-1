@@ -25,12 +25,13 @@ const char * ranking_to_string(hand_ranking_t r) {
 
 char value_letter(card_t c) {
   assert_card_valid(c);
-  char x = 'S';
+  char x = '?';
   if((c.value>=2)&&(c.value<=9)){
     x = '0'+c.value;
   }
   else{
     switch(c.value){
+    case 10: {x='0'; break;}
     case VALUE_JACK: {x='J'; break;}
     case VALUE_QUEEN:{x='Q'; break;}
     case VALUE_KING: {x='K'; break;}
