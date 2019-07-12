@@ -1,0 +1,12 @@
+Grading at Fri Jul 12 22:42:25 UTC 2019
+Compiling cards.c
+Testing card_from_letters
+Passed
+Testing value_letter and suit_letter
+For 0s, you gave value = ?, suit = s
+For 0h, you gave value = ?, suit = h
+For 0d, you gave value = ?, suit = d
+For 0c, you gave value = ?, suit = c
+Failed
+
+Overall Grade: FAILED
