@@ -88,7 +88,7 @@ card_t card_from_letters(char value_let, char suit_let) {
 
 card_t card_from_num(unsigned c) {
   card_t ans;
-  unsigned value = c%13;
+  unsigned value = c%13+2;
   unsigned suit = c/13;
 
   ans.value = value;
