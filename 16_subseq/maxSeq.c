@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-size_t maxSeq(int * array[], size_t n){
+size_t maxSeq(int * array, size_t n){
 
   size_t ans = 0;
   if(n<=0){return ans;}
@@ -12,8 +12,8 @@ size_t maxSeq(int * array[], size_t n){
     else{
       if(curMax>ans){
 	ans = curMax;
-	curMax = 1;
       }
+      curMax = 1;
     }
   }
   if(curMax>ans){ans=curMax;}
