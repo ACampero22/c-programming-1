@@ -1,0 +1,8 @@
+Grading at Tue Jul 16 02:43:53 UTC 2019
+Attempting to compile power.c
+gcc: error: power.c: No such file or directory
+gcc: fatal error: no input files
+compilation terminated.
+The code did not compile!
+
+Overall Grade: F
