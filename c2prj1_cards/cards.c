@@ -24,7 +24,7 @@ const char * ranking_to_string(hand_ranking_t r) {
 }
 
 char value_letter(card_t c) {
-  assert_card_valid(c);
+  
   char x = '?';
   if((c.value>=2)&&(c.value<=9)){
     x = '0'+c.value;
@@ -45,7 +45,7 @@ char value_letter(card_t c) {
 
 
 char suit_letter(card_t c) {
-  assert_card_valid(c);
+  
   char x = '?';
   switch(c.suit){
   case SPADES: {x='s'; break;}
@@ -82,7 +82,6 @@ card_t card_from_letters(char value_let, char suit_let) {
   case 'c': {ans.suit = CLUBS; break;}
   }
   
-  assert_card_valid(ans);
   return ans;
 }
 
