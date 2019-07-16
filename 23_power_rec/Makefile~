@@ -1,6 +1,8 @@
 CFLAGS=-std=gnu99 -pedantic -Wall
-power: power.o power-test.o
-	gcc -o power.c power-test.o
+test-power: test-power.o power.o
+	gcc -o test-power test-power.o power.o
+
+
 %.o: %.c
 	gcc $(CFLAGS) -c $<
 .PHONY: clean
