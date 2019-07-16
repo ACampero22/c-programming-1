@@ -1,8 +1,12 @@
-Grading at Tue Jul 16 02:43:53 UTC 2019
+Grading at Tue Jul 16 02:44:57 UTC 2019
 Attempting to compile power.c
-gcc: error: power.c: No such file or directory
-gcc: fatal error: no input files
-compilation terminated.
+power.c: In function ‘power’:
+power.c:5:11: error: expected expression before ‘:’ token
+   if(x==0): return 1;
+           ^
+power.c:6:11: error: expected expression before ‘:’ token
+   if(y==0): return 0;
+           ^
 The code did not compile!
 
 Overall Grade: F
