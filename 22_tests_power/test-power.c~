@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h.
+
+unsigned power(unsigned x, unsigned y);
+
+int main(void){
+
+  unsigned ans;
+
+  ans = power(0,0);
+  if(ans!=1) return EXIT_FAILURE;
+
+  ans = power(10,0);
+  if(ans!=1) return EXIT_FAILURE;
+
+  ans = power(100, 2);
+  if(ans!=100) return EXIT_FAILURE;
+
+  ans = power(0,1);
+  if(ans!=0) return EXIT_FAILURE;
+
+  ans = power(0,10);
+  if(ans!=0) return EXIT_FAILURE;
+
+  ans = power(9, -2);
+  if(ans!=1/81) return EXIT_FAILURE;
+
+  return EXIT_SUCCESS;
+}
