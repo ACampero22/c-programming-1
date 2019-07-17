@@ -140,10 +140,10 @@ hand_eval_t build_hand_from_match(deck_t * hand,
       if(count==5) break;
     }
     if(count<5){
-      for(size_t i = n+idx; i<hand->n_cards+1; i++){
+      for(size_t i = n+idx; i<hand->n_cards; i++){
 	ans.cards[count] = *(card+i);
 	count++;
-	if(count>5) break;
+	if(count==5) break;
       }
     }
   }
