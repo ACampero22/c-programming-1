@@ -24,8 +24,8 @@ int decrypt(FILE *f){
   }
 
   //get decryption
-  if(hfc-'e'>=0) return  hfc - 'e';
-  else return 26 + hfc - 'e';
+  if(hfc>=5) return  hfc;
+  else return 26 + hfc - 5;
 
 }
 
