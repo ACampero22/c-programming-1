@@ -3,7 +3,8 @@
 #include <ctype.h>
 
 int decrypt(FILE *f){
-  int c, arr[26]={0};
+  int c;
+  int arr[26]={0};
 
   //get char freq count
   while((c=fgetc(f))!=EOF){
