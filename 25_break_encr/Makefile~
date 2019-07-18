@@ -1,2 +1,0 @@
-breaker:break.o
-	gcc -o breaker -pedantic -ggdb3 -std-gnu99 -Wall -Werror break.c
