@@ -32,13 +32,14 @@ int main(int argc, char ** argv) {
     fprintf(stderr, "no arguement\n");
     return EXIT_FAILURE;
   }
-
-  char ** arr = NULL;
-  char * line = NULL;
-  size_t sz = 0;
-  int i = 0;
   
   if(argc==1){
+    
+    char ** arr = NULL;
+    char * line = NULL;
+    size_t sz = 0;
+    int i = 0;
+
     while(getline(&line, &sz, stdin)>=0){
       arr = realloc(arr, (i+1)*sizeof(*arr));
       arr[i] = line;
@@ -51,6 +52,11 @@ int main(int argc, char ** argv) {
 
   else{
     for(int n=1; n<argc; n++){
+      char **arr = NULL;
+      char * line = NULL;
+      size_t sz = 0;
+      int i = 0;
+      
       FILE * f = fopen(argv[n], "r");
       if(!f){
 	perror("Could not open file");
