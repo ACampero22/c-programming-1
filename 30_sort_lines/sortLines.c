@@ -16,19 +16,13 @@ void sortData(char ** data, size_t count) {
   qsort(data, count, sizeof(char *), stringOrder);
 }
 
-
-int sort_print_free(FILE * f, char **arr, int i){
+void sort_print(char **arr, int i){
   sortData(arr, i);
   for(int j=0; j<i; j++){
     printf("%s", arr[j]);
     free(arr[j]);
   }
   free(arr);
-  if(f!=NULL && fclose(f)!=0){
-    perror("Failed to close the input file");
-    return 0;
-  }
-  return 1;
 }
 
 int main(int argc, char ** argv) {
@@ -52,7 +46,7 @@ int main(int argc, char ** argv) {
       i++;
     }
     free(line);
-    if(sort_print_free(NULL, arr, i)==0) return EXIT_FAILURE;
+    sort_print(arr, i);
   }
 
   else{
@@ -70,10 +64,13 @@ int main(int argc, char ** argv) {
 	i++;
       }
       free(line);
-      if(sort_print_free(f, arr, i)==0) return EXIT_FAILURE;
+      sort_print(arr, i);
+      if(f!=NULL && fclose(f)!=0){
+	perror("Failed to close the input file");
+	return EXIT_FAILURE;
+      }
     }
   }
-
-  
+ 
   return EXIT_SUCCESS;
 }
