@@ -1,20 +1,10 @@
-Grading at Sat Jul 20 16:48:35 UTC 2019
+Grading at Sat Jul 20 16:52:56 UTC 2019
 Compiling deck.c -> deck.o
 deck.c: In function ‘add_empty_card’:
-deck.c:71:20: error: ‘n_cards’ undeclared (first use in this function)
-   deck->cards[deck-n_cards] = c1;
-                    ^
-deck.c:71:20: note: each undeclared identifier is reported only once for each function it appears in
-deck.c:71:31: error: ‘c1’ undeclared (first use in this function)
-   deck->cards[deck-n_cards] = c1;
-                               ^
-deck.c:74:1: error: expected ‘;’ before ‘}’ token
- }
- ^
-deck.c: In function ‘build_remaining_deck’:
-deck.c:103:10: error: ‘deck2’ undeclared (first use in this function)
-   deck * deck2 = make_deck_exclude(deck);
-          ^
+deck.c:71:32: error: ‘c1’ undeclared (first use in this function)
+   deck->cards[deck->n_cards] = c1;
+                                ^
+deck.c:71:32: note: each undeclared identifier is reported only once for each function it appears in
 deck.c: At top level:
 deck.c:109:6: error: conflicting types for ‘free_deck’
  void free_deck(deck_t deck){
@@ -40,11 +30,6 @@ In file included from deck.c:2:0:
 /usr/include/stdlib.h:483:13: note: expected ‘void *’ but argument is of type ‘deck_t {aka struct deck_tag}’
  extern void free (void *__ptr) __THROW;
              ^
-deck.c: In function ‘build_remaining_deck’:
-deck.c:107:1: error: control reaches end of non-void function [-Werror=return-type]
- }
- ^
-cc1: all warnings being treated as errors
 Compilation of deck.c failed
 
 Overall Grade: F
