@@ -41,11 +41,11 @@ int main(int argc, char ** argv) {
     //compute the output file name from argv[i] (call this outName)
     char * outName = computeOutputFileName(argv[i]);
     //open the file named by outName (call that f)
-    FILE * out = fopen(outName, "w");
+    FILE * f = fopen(outName, "w");
     //print the counts from c into the FILE f
-    printCounts(c, out);
+    printCounts(c, f);
     //close f
-    if(!fclose(out)) return EXIT_FAILURE;
+    if(fclose(f)!=0) return EXIT_FAILURE;
     //free the memory for outName and c
     free(outName);
     freeCounts(c);
