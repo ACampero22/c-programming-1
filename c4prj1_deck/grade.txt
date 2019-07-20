@@ -1,35 +1,13 @@
-Grading at Sat Jul 20 16:52:56 UTC 2019
+Grading at Sat Jul 20 16:54:36 UTC 2019
 Compiling deck.c -> deck.o
-deck.c: In function ‘add_empty_card’:
-deck.c:71:32: error: ‘c1’ undeclared (first use in this function)
-   deck->cards[deck->n_cards] = c1;
+Compiling eval.c -> eval.o
+eval.c: In function ‘get_match_counts’:
+eval.c:184:31: error: expected ‘]’ before ‘)’ token
+     card_t c = *(hand->cards[i));
+                               ^
+eval.c:184:32: error: expected ‘,’ or ‘;’ before ‘)’ token
+     card_t c = *(hand->cards[i));
                                 ^
-deck.c:71:32: note: each undeclared identifier is reported only once for each function it appears in
-deck.c: At top level:
-deck.c:109:6: error: conflicting types for ‘free_deck’
- void free_deck(deck_t deck){
-      ^
-In file included from deck.c:4:0:
-deck.h:19:6: note: previous declaration of ‘free_deck’ was here
- void free_deck(deck_t * deck) ;
-      ^
-deck.c: In function ‘free_deck’:
-deck.c:110:22: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
-   for(int i=0; i<deck->n_cards;i++){
-                      ^
-deck.c:111:14: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
-     free(deck->cards[i]);
-              ^
-deck.c:114:12: error: invalid type argument of ‘->’ (have ‘deck_t {aka struct deck_tag}’)
-   free(deck->cards);
-            ^
-deck.c:115:8: error: incompatible type for argument 1 of ‘free’
-   free(deck);
-        ^
-In file included from deck.c:2:0:
-/usr/include/stdlib.h:483:13: note: expected ‘void *’ but argument is of type ‘deck_t {aka struct deck_tag}’
- extern void free (void *__ptr) __THROW;
-             ^
-Compilation of deck.c failed
+Compilation of eval.c failed
 
 Overall Grade: F
