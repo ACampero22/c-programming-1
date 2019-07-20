@@ -10,7 +10,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t *ptr){
   deck_t * decks = fc->decks;
   if(index < fc->n_decks){
     decks[index].cards = realloc(decks[index].cards, (decks[index].n_cards+1)*sizeof(*decks[index].cards));
-    decks[index].cards[decks.n_cards] = ptr;
+    decks[index].cards[decks[index].n_cards] = ptr;
     decks[index].n_cards++;
   }
   else{
@@ -31,7 +31,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t *ptr){
 void future_cards_from_deck(deck_t * deck, future_cards_t *fc){
   if(deck->n_cards < fc->n_decks){
     fprintf(stderr, "not enough cards in the deck");
-    return EXIT_FAILURE;
+    return;
   }
 
   for(int i=0; i<fc->n_decks; i++){
