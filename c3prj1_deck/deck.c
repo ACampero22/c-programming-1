@@ -68,9 +68,9 @@ card_t * add_empty_card(deck_t * deck){
 
   //add the empty and assign pointer
   deck->cards = realloc(deck->cards, (deck->n_cards+1)*sizeof(*deck->cards));
-  deck->cards[deck-n_cards] = c1;
+  deck->cards[deck->n_cards] = c1;
   deck->n_cards++;
-  return c
+  return c;
 }
 
 deck_t * make_deck_exclude(deck_t * excluded_cards){
@@ -100,7 +100,7 @@ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands){
   }
 
   //build deck from remaining cards
-  deck * deck2 = make_deck_exclude(deck);
+  deck_t * deck2 = make_deck_exclude(deck);
   free(deck->cards);
   free(deck);
   return deck2;
