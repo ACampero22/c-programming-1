@@ -1,10 +1,17 @@
-Grading at Sat Jul 20 17:37:37 UTC 2019
+Grading at Sat Jul 20 17:39:07 UTC 2019
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
-future.c:7:18: fatal error: card.h: No such file or directory
-compilation terminated.
+future.c: In function ‘add_future_card’:
+future.c:13:29: error: request for member ‘n_cards’ in something not a structure or union
+     decks[index].cards[decks.n_cards] = ptr;
+                             ^
+future.c: In function ‘future_cards_from_deck’:
+future.c:34:12: error: ‘return’ with a value, in function returning void [-Werror]
+     return EXIT_FAILURE;
+            ^
+cc1: all warnings being treated as errors
 Compilation of future.c failed
 
 Overall Grade: F
