@@ -37,13 +37,15 @@ void shuffle(deck_t * d){
 
 void assert_full_deck(deck_t * d) {
   card_t ** card = d->cards;
+  int cnt;
+  card_t c;
   for(size_t i=0; i<d->n_cards; i++){
-    card_t c = **(card+i);
-    int cnt = 0;
-    if(deck_contains(d, c)) {cnt++;}
-    if(cnt>1){
-      assert(cnt==52&&"contain duplicate cards in the deck");
+    c = **(card+i);
+    cnt = 0;
+    for(size_t j=0; j<d->n_cards; j++){
+      if(c.value==**(card+j).value && c.suit == **(card+j).suit) cnt++;
     }
+    assert(cnt==1);
   }
 }
 
