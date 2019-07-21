@@ -44,7 +44,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t *fc){
   size_t sz = 0;
 
   while(getline(&line, &sz, f)>=0){
-    arr = realloc(arr, (n_hand+10)*sizeof(*arr));
+    arr = realloc(arr, (n_hand+1)*sizeof(*arr));
     deck_t * deck = hand_from_string(line, fc);
     if(deck==NULL) continue;
     arr[n_hand] = deck;
