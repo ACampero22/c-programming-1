@@ -62,12 +62,12 @@ int main(int argc, char ** argv) {
   for(int i=0; i<n_hands+1; i++) win_hands[i] = 0;
 
   int n_trials = 10000;
-  int win_idx;
+  
   if(argc==3) n_trials = atoi(argv[2]);
   for(int i=0; i<n_trials; i++){
     shuffle(remains);
     future_cards_from_deck(remains, fc);
-    win_idx = get_best_hand_idx(decks, n_hands);
+    int win_idx = get_best_hand_idx(decks, n_hands);
     win_hands[win_idx]++;
   }
 
@@ -84,7 +84,7 @@ int main(int argc, char ** argv) {
   }
   free(decks);
   for(int i=fc->n_decks-1; i>=0;  i--){
-    if(fc->decks[i].n_cards!=0) free(fc->decks[i].cards);
+    if(fc->decks[i].n_cards>0) free(fc->decks[i].cards);
   }
   free(fc->decks);
   free(fc);
