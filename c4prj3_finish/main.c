@@ -74,7 +74,7 @@ int main(int argc, char ** argv) {
   //print result
   for(size_t i=0; i<n_hands; i++){
     printf("Hand %zu won %u / %u times (%.2f%%)\n",
-	   i, win_hands[i], n_trials, ((float)win_hands[i]/n_trials)*100);
+	   i, win_hands[i], n_trials, (((float)win_hands[i])/n_trials)*100);
   }
   printf("And there were %u ties\n", win_hands[n_hands]);
 
@@ -90,6 +90,8 @@ int main(int argc, char ** argv) {
   free(fc);
   free_deck(remains);
 
+  
+  //close file
   if(fclose(f)!=0){
     fprintf(stderr, "Could not close file");
     return EXIT_FAILURE;
