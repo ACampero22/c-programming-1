@@ -43,7 +43,7 @@ void assert_full_deck(deck_t * d) {
     c = **(card+i);
     cnt = 0;
     for(size_t j=0; j<d->n_cards; j++){
-      if(c.value==**(card+j).value && c.suit == **(card+j).suit) cnt++;
+      if(c.value==(**(card+j)).value && c.suit == (**(card+j)).suit) cnt++;
     }
     assert(cnt==1);
   }
