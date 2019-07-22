@@ -8,37 +8,6 @@
 #include "future.h"
 #include "input.h"
 
-int win_hand(deck_t ** deck_array,int n_hands){
-  int w[n_hands+1];
-  for(int u=0;u<n_hands+1;u++) w[u]=0;
-  int v=0;
-  for(int i =0;i<n_hands-1;i++){
-    for (int j=i+1;j<n_hands;j++){
-      // print_hand(deck_array[i]);
-      //            print_hand(deck_array[j]);
-      // printf("\n");
-      v=compare_hands(deck_array[i],deck_array[j]);
-      if(v>0) w[i]++;
-      else if (v<0) w[j]++;
-      else w[n_hands]++;
-    }
-  }
-  unsigned largest= 0;
-  for(int x=0;x<n_hands+1;x++){
-    if(w[x] > w[largest])largest=x;
-  }
-  int count=0;
-  if(w[n_hands]>0){
-    for(int x=0;x<n_hands+1;x++){
-      if(w[x] == w[largest]) count++;
-    }
-  }
-  if(count>1) return n_hands;
-  return  largest;
-}
-
-
-/*
 int get_best_hand_idx(deck_t ** decks, int n_hands){
   int tmp[n_hands+1];
   for(int i=0; i<n_hands+1; i++) tmp[i] = 0;
@@ -70,14 +39,14 @@ int main(int argc, char ** argv) {
   
   //check cml argument
   if(argc < 2){
-    fprintf(stderr, "Invalid arguement");
+    fprintf(stderr, "Invalid arguement\n");
     return EXIT_FAILURE;
   }
 
   //Open and read file
   FILE * f = fopen(argv[1], "r");
   if(f==NULL){
-    fprintf(stderr, "Could not open file");
+    fprintf(stderr, "Could not open file\n");
     return EXIT_FAILURE;
   }
 
@@ -99,7 +68,7 @@ int main(int argc, char ** argv) {
   for(int i=0; i<n_trials; i++){
     shuffle(remains);
     future_cards_from_deck(remains, fc);
-    int win_idx = win_hand(decks, n_hands);
+    int win_idx = get_best_hand_idx(decks, n_hands);
     win_hands[win_idx]++;
   }
 
@@ -116,7 +85,7 @@ int main(int argc, char ** argv) {
   }
   free(decks);
   for(int i=fc->n_decks-1; i>=0;  i--){
-    if(fc->decks[i].n_cards>0) free(fc->decks[i].cards);
+    if(fc->decks[i].n_cards!=0) free(fc->decks[i].cards);
   }
   free(fc->decks);
   free(fc);
