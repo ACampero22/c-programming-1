@@ -10,7 +10,7 @@
 
 int get_best_hand_idx(deck_t ** decks, int n_hands){
   int tmp[n_hands+1];
-  for(int u=0; i<n_hands+1; i++) tmp[i] = 0;
+  for(int i=0; i<n_hands+1; i++) tmp[i] = 0;
   int com;
   for(int i=0; i<n_hands-1; i++){
     for(int j=i+1; j<n_hands; j++){
