@@ -1,4 +1,4 @@
-Grading at Mon Jul 22 08:05:25 UTC 2019
+Grading at Mon Jul 22 08:21:56 UTC 2019
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -11,51 +11,51 @@ gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o main.o main.c
 gcc -o poker -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 cards.o deck.o eval.o future.o input.o main.o
  - Starting with some Texas Hold'em hands
 Running a simulation with 20000 draws for 2 hands...
-    Hand 0 was close enough to our answer
-    Hand 1 was close enough to our answer
-    Test case passed!    
+ ** Hand 0 differed from our answer by 28.59%
+ ** Hand 1 differed from our answer by -29.13%
+*** Test case failed ***
 Running a simulation with 25000 draws for 3 hands...
-    Hand 0 was close enough to our answer
-    Hand 1 was close enough to our answer
-    Hand 2 was close enough to our answer
-    Test case passed!    
+ ** Hand 0 differed from our answer by 9.76%
+ ** Hand 1 differed from our answer by -22.30%
+ ** Hand 2 differed from our answer by 12.19%
+*** Test case failed ***
 Running a simulation with 25000 draws for 3 hands...
-    Hand 0 was close enough to our answer
-    Hand 1 was close enough to our answer
-    Hand 2 was close enough to our answer
-    Test case passed!    
+ ** Hand 0 differed from our answer by -42.40%
+ ** Hand 1 differed from our answer by 11.58%
+ ** Hand 2 differed from our answer by 30.70%
+*** Test case failed ***
 Running a simulation with 25000 draws for 2 hands...
-    Hand 0 was close enough to our answer
-    Hand 1 was close enough to our answer
-    Test case passed!    
+ ** Hand 0 differed from our answer by -27.07%
+ ** Hand 1 differed from our answer by 17.06%
+*** Test case failed ***
 Running a simulation with 80000 draws for 4 hands...
-    Hand 0 was close enough to our answer
-    Hand 1 was close enough to our answer
-    Hand 2 was close enough to our answer
-    Hand 3 was close enough to our answer
-    Test case passed!    
+ ** Hand 0 differed from our answer by -81.76%
+ ** Hand 1 differed from our answer by 54.58%
+ ** Hand 2 differed from our answer by 18.13%
+ ** Hand 3 differed from our answer by 9.05%
+*** Test case failed ***
 Running a simulation with 30000 draws for 2 hands...
-    Hand 0 was close enough to our answer
-    Hand 1 was close enough to our answer
-    Test case passed!    
+ ** Hand 0 differed from our answer by -58.33%
+ ** Hand 1 differed from our answer by 58.33%
+*** Test case failed ***
  - Next, few Seven Card Stud hands
 Running a simulation with 30000 draws for 2 hands...
-    Hand 0 was close enough to our answer
-    Hand 1 was close enough to our answer
-    Test case passed!    
+ ** Hand 0 differed from our answer by -17.10%
+ ** Hand 1 differed from our answer by 17.07%
+*** Test case failed ***
 Running a simulation with 40000 draws for 3 hands...
-    Hand 0 was close enough to our answer
-    Hand 1 was close enough to our answer
-    Hand 2 was close enough to our answer
-    Test case passed!    
+ ** Hand 0 differed from our answer by 4.70%
+ ** Hand 1 differed from our answer by -7.68%
+ ** Hand 2 differed from our answer by 2.98%
+*** Test case failed ***
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
-Valgrind reported errors:
-==3257== Memcheck, a memory error detector
-==3257== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==3257== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==3257== Command: ./poker whacky.txt 100000
-==3257== Parent PID: 3256
-==3257== 
+ ** Hand 0 differed from our answer by -4.39%
+ ** Hand 1 differed from our answer by -2.98%
+ ** Hand 2 differed from our answer by 8.55%
+ ** Hand 3 differed from our answer by -2.76%
+    Hand 4 was close enough to our answer
+ ** Hand 5 differed from our answer by 2.39%
+*** Test case failed ***
 
-Overall Grade: B
+Overall Grade: F
