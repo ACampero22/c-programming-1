@@ -33,7 +33,7 @@ int get_best_hand_idx(deck_t ** decks, int n_hands){
   if(count>1) return n_hands;
   return best;
 }
-*/
+
 
 int main(int argc, char ** argv) {
   
