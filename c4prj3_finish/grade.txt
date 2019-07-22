@@ -1,14 +1,14 @@
-Grading at Sun Jul 21 16:06:58 UTC 2019
+Grading at Mon Jul 22 01:44:31 UTC 2019
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
-gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o cards.o cards.c
-gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o deck.o deck.c
-gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o eval.o eval.c
-gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o future.o future.c
-gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o input.o input.c
-gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o main.o main.c
-gcc -o poker -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 cards.o deck.o eval.o future.o input.o main.o
+gcc -Wall -pg -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o cards.o cards.c
+gcc -Wall -pg -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o deck.o deck.c
+gcc -Wall -pg -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o eval.o eval.c
+gcc -Wall -pg -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o future.o future.c
+gcc -Wall -pg -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o input.o input.c
+gcc -Wall -pg -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o main.o main.c
+gcc -o poker -Wall -pg -Werror -ggdb3 -std=gnu99 -pedantic -O3 cards.o deck.o eval.o future.o input.o main.o
  - Starting with some Texas Hold'em hands
 Running a simulation with 20000 draws for 2 hands...
     Hand 0 was close enough to our answer
@@ -51,11 +51,11 @@ Running a simulation with 40000 draws for 3 hands...
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
 Valgrind reported errors:
-==3442== Memcheck, a memory error detector
-==3442== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==3442== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==3442== Command: ./poker whacky.txt 100000
-==3442== Parent PID: 3441
-==3442== 
+==712== Memcheck, a memory error detector
+==712== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==712== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==712== Command: ./poker whacky.txt 100000
+==712== Parent PID: 711
+==712== 
 
 Overall Grade: B
