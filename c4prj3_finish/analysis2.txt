@@ -3,29 +3,30 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  ns/call  ns/call  name    
- 25.45      0.30     0.30  3000000   100.09   100.09  flush_suit
- 15.27      0.48     0.18  2996835    60.12    60.12  get_match_counts
- 13.57      0.64     0.16 13603400    11.77    11.77  is_n_length_straight_at
- 12.30      0.79     0.15                             card_ptr_comp
-  8.48      0.89     0.10  2996835    33.40    33.40  find_secondary_pair
-  4.24      0.94     0.05  2996835    16.70    16.70  get_largest_element
-  3.82      0.98     0.05  8472275     5.32    27.17  is_straight_at
-  3.82      1.03     0.05  2445480    18.42    18.42  build_hand_from_match
-  3.39      1.07     0.04  3000000    13.35   331.97  evaluate_hand
-  2.54      1.10     0.03  2996835    10.02    10.02  get_match_index
-  2.54      1.13     0.03                             shuffle
-  2.12      1.15     0.03  8472275     2.95    10.14  is_ace_low_straight_at
-  0.85      1.16     0.01  2976990     3.36    84.05  find_straight
-  0.85      1.17     0.01   238265    42.01    42.01  copy_straight
-  0.42      1.18     0.01  1500000     3.34   667.27  compare_hands
-  0.42      1.18     0.01                             free_deck
-  0.00      1.18     0.00       52     0.00     0.00  card_from_num
-  0.00      1.18     0.00       24     0.00     0.00  add_card_to
-  0.00      1.18     0.00       24     0.00     0.00  card_from_letters
-  0.00      1.18     0.00       18     0.00     0.00  add_empty_card
-  0.00      1.18     0.00       18     0.00     0.00  add_future_card
-  0.00      1.18     0.00        6     0.00     0.00  hand_from_string
-  0.00      1.18     0.00        1     0.00     0.00  make_deck_exclude
+ 34.03      0.51     0.51  2996835   170.34   170.34  get_match_counts
+ 18.68      0.79     0.28  3000000    93.42    93.42  flush_suit
+ 10.68      0.95     0.16 13603400    11.77    11.77  is_n_length_straight_at
+  8.67      1.08     0.13                             card_ptr_comp
+  7.34      1.19     0.11  3000000    36.70   427.06  evaluate_hand
+  4.00      1.25     0.06  2996835    20.04    20.04  get_largest_element
+  3.34      1.30     0.05  8472275     5.91    13.09  is_ace_low_straight_at
+  3.34      1.35     0.05  2445480    20.46    20.46  build_hand_from_match
+  2.00      1.38     0.03  2976990    10.09    84.05  find_straight
+  2.00      1.41     0.03  1500000    20.02   874.14  compare_hands
+  2.00      1.44     0.03                             shuffle
+  1.33      1.46     0.02  2996835     6.68     6.68  find_secondary_pair
+  1.33      1.48     0.02                             get_best_hand_idx
+  0.67      1.49     0.01   238265    42.01    42.01  copy_straight
+  0.67      1.50     0.01                             free_deck
+  0.00      1.50     0.00  8472275     0.00    24.81  is_straight_at
+  0.00      1.50     0.00  2996835     0.00     0.00  get_match_index
+  0.00      1.50     0.00       52     0.00     0.00  card_from_num
+  0.00      1.50     0.00       24     0.00     0.00  add_card_to
+  0.00      1.50     0.00       24     0.00     0.00  card_from_letters
+  0.00      1.50     0.00       18     0.00     0.00  add_empty_card
+  0.00      1.50     0.00       18     0.00     0.00  add_future_card
+  0.00      1.50     0.00        6     0.00     0.00  hand_from_string
+  0.00      1.50     0.00        1     0.00     0.00  make_deck_exclude
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -63,74 +64,74 @@ notice and this notice are preserved.
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 2 byte(s) for 0.85% of 1.18 seconds
+granularity: each sample hit covers 2 byte(s) for 0.67% of 1.50 seconds
 
 index % time    self  children    called     name
-                0.01    1.00 1500000/1500000     get_best_hand_idx [2]
-[1]     84.7    0.01    1.00 1500000         compare_hands [1]
-                0.04    0.96 3000000/3000000     evaluate_hand [3]
------------------------------------------------
                                                  <spontaneous>
-[2]     84.7    0.00    1.00                 get_best_hand_idx [2]
-                0.01    1.00 1500000/1500000     compare_hands [1]
+[1]     88.7    0.02    1.31                 get_best_hand_idx [1]
+                0.03    1.28 1500000/1500000     compare_hands [2]
 -----------------------------------------------
-                0.04    0.96 3000000/3000000     compare_hands [1]
-[3]     84.3    0.04    0.96 3000000         evaluate_hand [3]
-                0.30    0.00 3000000/3000000     flush_suit [4]
-                0.01    0.24 2976990/2976990     find_straight [5]
-                0.18    0.00 2996835/2996835     get_match_counts [7]
-                0.10    0.00 2996835/2996835     find_secondary_pair [10]
-                0.05    0.00 2996835/2996835     get_largest_element [12]
-                0.05    0.00 2445480/2445480     build_hand_from_match [13]
-                0.03    0.00 2996835/2996835     get_match_index [14]
+                0.03    1.28 1500000/1500000     get_best_hand_idx [1]
+[2]     87.3    0.03    1.28 1500000         compare_hands [2]
+                0.11    1.17 3000000/3000000     evaluate_hand [3]
 -----------------------------------------------
-                0.30    0.00 3000000/3000000     evaluate_hand [3]
-[4]     25.4    0.30    0.00 3000000         flush_suit [4]
+                0.11    1.17 3000000/3000000     compare_hands [2]
+[3]     85.3    0.11    1.17 3000000         evaluate_hand [3]
+                0.51    0.00 2996835/2996835     get_match_counts [4]
+                0.28    0.00 3000000/3000000     flush_suit [5]
+                0.03    0.22 2976990/2976990     find_straight [6]
+                0.06    0.00 2996835/2996835     get_largest_element [11]
+                0.05    0.00 2445480/2445480     build_hand_from_match [12]
+                0.02    0.00 2996835/2996835     find_secondary_pair [14]
+                0.00    0.00 2996835/2996835     get_match_index [17]
 -----------------------------------------------
-                0.01    0.24 2976990/2976990     evaluate_hand [3]
-[5]     21.2    0.01    0.24 2976990         find_straight [5]
-                0.05    0.19 8472275/8472275     is_straight_at [6]
-                0.01    0.00  238265/238265      copy_straight [16]
+                0.51    0.00 2996835/2996835     evaluate_hand [3]
+[4]     34.0    0.51    0.00 2996835         get_match_counts [4]
 -----------------------------------------------
-                0.05    0.19 8472275/8472275     find_straight [5]
-[6]     19.5    0.05    0.19 8472275         is_straight_at [6]
+                0.28    0.00 3000000/3000000     evaluate_hand [3]
+[5]     18.7    0.28    0.00 3000000         flush_suit [5]
+-----------------------------------------------
+                0.03    0.22 2976990/2976990     evaluate_hand [3]
+[6]     16.7    0.03    0.22 2976990         find_straight [6]
+                0.00    0.21 8472275/8472275     is_straight_at [7]
+                0.01    0.00  238265/238265      copy_straight [15]
+-----------------------------------------------
+                0.00    0.21 8472275/8472275     find_straight [6]
+[7]     14.0    0.00    0.21 8472275         is_straight_at [7]
+                0.05    0.06 8472275/8472275     is_ace_low_straight_at [10]
                 0.10    0.00 8430600/13603400     is_n_length_straight_at [8]
-                0.03    0.06 8472275/8472275     is_ace_low_straight_at [11]
 -----------------------------------------------
-                0.18    0.00 2996835/2996835     evaluate_hand [3]
-[7]     15.3    0.18    0.00 2996835         get_match_counts [7]
------------------------------------------------
-                0.06    0.00 5172800/13603400     is_ace_low_straight_at [11]
-                0.10    0.00 8430600/13603400     is_straight_at [6]
-[8]     13.6    0.16    0.00 13603400         is_n_length_straight_at [8]
+                0.06    0.00 5172800/13603400     is_ace_low_straight_at [10]
+                0.10    0.00 8430600/13603400     is_straight_at [7]
+[8]     10.7    0.16    0.00 13603400         is_n_length_straight_at [8]
 -----------------------------------------------
                                                  <spontaneous>
-[9]     12.3    0.15    0.00                 card_ptr_comp [9]
+[9]      8.7    0.13    0.00                 card_ptr_comp [9]
 -----------------------------------------------
-                0.10    0.00 2996835/2996835     evaluate_hand [3]
-[10]     8.5    0.10    0.00 2996835         find_secondary_pair [10]
------------------------------------------------
-                0.03    0.06 8472275/8472275     is_straight_at [6]
-[11]     7.3    0.03    0.06 8472275         is_ace_low_straight_at [11]
+                0.05    0.06 8472275/8472275     is_straight_at [7]
+[10]     7.4    0.05    0.06 8472275         is_ace_low_straight_at [10]
                 0.06    0.00 5172800/13603400     is_n_length_straight_at [8]
 -----------------------------------------------
-                0.05    0.00 2996835/2996835     evaluate_hand [3]
-[12]     4.2    0.05    0.00 2996835         get_largest_element [12]
+                0.06    0.00 2996835/2996835     evaluate_hand [3]
+[11]     4.0    0.06    0.00 2996835         get_largest_element [11]
 -----------------------------------------------
                 0.05    0.00 2445480/2445480     evaluate_hand [3]
-[13]     3.8    0.05    0.00 2445480         build_hand_from_match [13]
------------------------------------------------
-                0.03    0.00 2996835/2996835     evaluate_hand [3]
-[14]     2.5    0.03    0.00 2996835         get_match_index [14]
+[12]     3.3    0.05    0.00 2445480         build_hand_from_match [12]
 -----------------------------------------------
                                                  <spontaneous>
-[15]     2.5    0.03    0.00                 shuffle [15]
+[13]     2.0    0.03    0.00                 shuffle [13]
 -----------------------------------------------
-                0.01    0.00  238265/238265      find_straight [5]
-[16]     0.8    0.01    0.00  238265         copy_straight [16]
+                0.02    0.00 2996835/2996835     evaluate_hand [3]
+[14]     1.3    0.02    0.00 2996835         find_secondary_pair [14]
+-----------------------------------------------
+                0.01    0.00  238265/238265      find_straight [6]
+[15]     0.7    0.01    0.00  238265         copy_straight [15]
 -----------------------------------------------
                                                  <spontaneous>
-[17]     0.4    0.01    0.00                 free_deck [17]
+[16]     0.7    0.01    0.00                 free_deck [16]
+-----------------------------------------------
+                0.00    0.00 2996835/2996835     evaluate_hand [3]
+[17]     0.0    0.00    0.00 2996835         get_match_index [17]
 -----------------------------------------------
                 0.00    0.00      52/52          make_deck_exclude [24]
 [18]     0.0    0.00    0.00      52         card_from_num [18]
@@ -249,11 +250,11 @@ notice and this notice are preserved.
 
 Index by function name
 
-  [19] add_card_to            [16] copy_straight          [14] get_match_index
-  [21] add_empty_card          [3] evaluate_hand          [23] hand_from_string
-  [22] add_future_card        [10] find_secondary_pair    [11] is_ace_low_straight_at
-  [13] build_hand_from_match   [5] find_straight           [8] is_n_length_straight_at
-  [20] card_from_letters       [4] flush_suit              [6] is_straight_at
-  [18] card_from_num          [17] free_deck              [24] make_deck_exclude
-   [9] card_ptr_comp          [12] get_largest_element    [15] shuffle
-   [1] compare_hands           [7] get_match_counts
+  [19] add_card_to            [15] copy_straight           [4] get_match_counts
+  [21] add_empty_card          [3] evaluate_hand          [17] get_match_index
+  [22] add_future_card        [14] find_secondary_pair    [23] hand_from_string
+  [12] build_hand_from_match   [6] find_straight          [10] is_ace_low_straight_at
+  [20] card_from_letters       [5] flush_suit              [8] is_n_length_straight_at
+  [18] card_from_num          [16] free_deck               [7] is_straight_at
+   [9] card_ptr_comp           [1] get_best_hand_idx      [24] make_deck_exclude
+   [2] compare_hands          [11] get_largest_element    [13] shuffle
