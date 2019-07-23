@@ -12,9 +12,27 @@ int get_best_hand_idx(deck_t ** decks, int n_hands){
   int tmp[n_hands+1];
   for(int i=0; i<n_hands+1; i++) tmp[i] = 0;
   int com;
+  hand_eval_t hands[n_hands];
+  for(int i=0; i<n_hands-1; i++){
+    qsort(decks[i]->cards, decks[i]->n_cards, sizeof(card_t), card_ptr_comp);
+    hands[i] = evaluate_hand(decks[i]);
+  }
+
   for(int i=0; i<n_hands-1; i++){
     for(int j=i+1; j<n_hands; j++){
-      com = compare_hands(decks[i], decks[j]);
+      hand_eval_t handeval1 = hands[i];
+      hand_eval_t handeval2 = hands[j];
+      if(handeval1.ranking < handeval2.ranking) com = 1;
+      else if(handeval1.ranking > handeval2.ranking) com = -1;
+      else{
+	for(size_t x=0; x<5; i++){
+	  card_t * card1 = handeval1.cards[x];
+	  card_t * card2 = handeval2.cards[x];
+	  if(card1->value > card2->value) com = 1;
+	  else if(card1->value < card2->value) com = -1;
+	  else com = 0;
+	}
+      }
       if(com>0) tmp[i]++;
       else if (com<0) tmp[j]++;
       else tmp[n_hands]++;
