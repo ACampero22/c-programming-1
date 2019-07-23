@@ -8,20 +8,33 @@
 #include "future.h"
 #include "input.h"
 
+int compare(hand_eval_t h1, hand_eval_t h2){
+  if(h1.ranking<h2.ranking) return 1;
+  if(h1.ranking>h2.ranking) return -1;
+  for(size_t i=0; i<5; i++){
+    card_t * card1 = h1.cards[i];
+    card_t * card2 = h2.cards[i];
+    if(card1->value > card2->value) return 1;
+    if(card1->value < card2->value) return -1;
+  }
+  return 0;
+}
+
 int get_best_hand_idx(deck_t ** decks, int n_hands){
   int tmp[n_hands+1];
   for(int i=0; i<n_hands+1; i++) tmp[i] = 0;
   int com;
+  hand_eval_t * eval_hands = malloc(n_hands*sizeof(*eval_hands));
   
-  /*/sort and evaluate
-  for(int i=0; i<n_hands-1; i++){
+  //sort and evaluate
+  for(int i=0; i<n_hands; i++){
     qsort(decks[i]->cards, decks[i]->n_cards, sizeof(card_t), card_ptr_comp);
+    eval_hands[i] = evaluate_hand(decks[i]);
   }
-  */
 
   for(int i=0; i<n_hands-1; i++){
     for(int j=i+1; j<n_hands; j++){
-      com = compare_hands(decks[i], decks[j]);
+      com = compare(eval_hands[i], eval_hands[j]);
       if(com>0) tmp[i]++;
       else if(com<0) tmp[j]++;
       else tmp[n_hands]++;
